@@ -7,4 +7,4 @@ before_install:
   - docker pull trusch/susi-core-builder-stable
 
 script:
-  - docker run -v $(pwd):/src trusch/susi-library-builder-stable
+  - docker run -v $(pwd):/src trusch/susi-core-builder-stable
