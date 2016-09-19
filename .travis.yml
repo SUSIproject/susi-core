@@ -1,6 +1,35 @@
+sudo: required
 language: c++
-install:
-  - sudo apt-get update -qq
-  - sudo apt-get install -y -qq libboost-system-dev libboost-program-options-dev
+services:
+  - docker
+
+before_install:
+  - docker build -t susi/builder .
+  - >
+    docker run -v $(pwd):/src susi/builder /bin/bash -c "
+      pushd /src;
+      git submodule init;
+      git submodule update;
+
+      pushd submodules/libbson
+      cmake .
+      make -j8
+      make install
+      popd
+
+      pushd submodules/libsusi
+      cmake .
+      make -j8
+      make install
+      popd
+    "
+
 script:
-  - mkdir build && cd build && cmake .. && make package
+  - >
+  docker run -v $(pwd):/src susi/builder /bin/bash -c "
+    mkdir -p /src/build;
+    pushd /src/build;
+    cmake ..
+    make -j8
+    make package
+  "
