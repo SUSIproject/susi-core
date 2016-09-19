@@ -1,6 +1,6 @@
 language: c++
 install:
   - sudo apt-get update -qq
-  - sudo apt-get install -y -qq libboost-system1.55.0 libboost-program-options1.55.0
+  - sudo apt-get install -y -qq libboost-system-dev libboost-program-options-dev
 script:
   - mkdir build && cd build && cmake .. && make package
