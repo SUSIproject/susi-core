@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015, webvariants GmbH, http://www.webvariants.de
+ * Copyright (c) 2016, Tino Rusch
  *
  * This file is released under the terms of the MIT license. You can find the
  * complete text in the attached LICENSE file or online at:
