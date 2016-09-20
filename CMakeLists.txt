@@ -20,8 +20,6 @@ find_package(Threads REQUIRED)
 find_package(OpenSSL REQUIRED)
 find_package(Boost REQUIRED COMPONENTS system program_options)
 
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/submodules/libbson)
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/submodules/libbson/include)
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/submodules/libsusi)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/submodules/libsusi/include)
 
