@@ -22,6 +22,7 @@ find_package(Boost REQUIRED COMPONENTS system program_options)
 
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/submodules/libsusi)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/submodules/libsusi/include)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/submodules/libsusi/submodules/libbson/include)
 
 include_directories( ${CMAKE_CURRENT_SOURCE_DIR}/include )
 
