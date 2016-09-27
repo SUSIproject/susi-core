@@ -8,7 +8,7 @@ before_install:
 
 script:
 - docker run -v $(pwd):/src trusch/susi-builder:stable
-- docker run -v $(pwd):/src debian:stable bash -c "chown -R $(stat -c '%u:%g' .) /src"
+- cp build/*.deb ./susi-core-${TRAVIS_BRANCH}-linux-amd64.deb
 
 deploy:
   provider: releases
@@ -17,4 +17,4 @@ deploy:
     tags: true
   api_key:
     secure: paehviEiDauFBNQK7pzveie0Ynv7bXKoafCso8dqV4WpdUjaFpB9waDJBGd1suedEGF/YW7VjQVQ1wi4d3f7AJ/vX8kgsTLYdRSLWuWziBNuRBEukGthGgGhbwxdOyVIXpiqkrF8sB2BsB3RBTJtnv/V21JaOy3EUF0ybre7wCN5Q2YuR2Eqtc+WLYUr3BPMzia43S9ChiRcjow+9AaH71ACnqc01L41+NAGMb6dinBPjB3w3VTC9q269nbh4H72lsgCcOMjlDQKi+rl5+YwApfwVuKgLd0qOKNXjyBKisk1S7OafwCrlXV2EXC6RxtY0TJEemUBnh145F6hm5i3/NaKRURDj1L54FLbAki11SzMXRTp7S962Db1o0JWXxbx3kV1dEWrVdOfIofVKP5T6CXWZ0R584+vXps12DVOlXyhCMhrEvvjWLRagbtcF4ZehHY4eizXqDiJYxFpFDb6veTkcAj3nOjOmdSVAkQLgkPgAcDwwyF5wWlMdsQxaod4rjHGOwN6e8oniRpP+dnFMivvtwxbblLtw7Gu9X7SbHxdreGsZPyh8XOGBwjbOmRODjErX48hYeGAGMWUJZUGpx5S86RVWr7X5S6INm1rZZSy1TV6lsH/26KT969Jxd2VXguCDbetrxeuZhTIgSgaK///eAODUYPVX8nuiagLh2M=
-  file: "build/susi-core-0.2.0-Linux.deb"
+  file: "susi-core-${TRAVIS_BRANCH}-linux-amd64.deb"
