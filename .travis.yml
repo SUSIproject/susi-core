@@ -8,7 +8,7 @@ before_install:
 
 script:
 - docker run -v $(pwd):/src trusch/susi-builder:stable
-- docker run -v $(pwd):/src trusch/susi-builder:stable "chown -R $(stat -c '%u:%g' /src)"
+- docker run -v $(pwd):/src debian:stable bash -c "chown -R $(stat -c '%u:%g' .) /src"
 
 deploy:
   provider: releases
