@@ -8,6 +8,7 @@ before_install:
 
 script:
 - docker run -v $(pwd):/src trusch/susi-builder:stable
+- ls -Ralh
 
 deploy:
   provider: releases
