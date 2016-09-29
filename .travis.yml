@@ -5,6 +5,7 @@ services:
 
 before_install:
   - docker pull trusch/susi-builder:stable
+  - docker pull trusch/susi-arm-builder:stable
 
 script:
   - docker run -v $(pwd):/src trusch/susi-builder:stable
